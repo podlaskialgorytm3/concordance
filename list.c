@@ -33,7 +33,7 @@ void printStruct(concordancePointer wordList)
 {
     while (wordList != NULL)
     {
-        printf("Word: %s | Quantity of Lines: %d", wordList->word, wordList->quantity);
+        printf("Word: %s | Quantity of words: %d", wordList->word, wordList->quantity);
         printf(" | No. Lines: [ ");
         for (int i = 0; i < wordList->quantity; i++)
         {
