@@ -1,17 +1,24 @@
 CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
+
+
 TARGET = main
-SRCS = main.c list.c sort.c search.c
-OBJS = $(SRCS:.c=.o)
+
+
+SRC = main.c list.c sort.c search.c
+OBJ = $(SRC:.c=.o)
+
 
 all: $(TARGET)
 
-$(TARGET): $(OBJS)
+
+$(TARGET): $(OBJ)
 	$(CC) -o $@ $^
 
+
 %.o: %.c
-	$(CC) -c $<
+	$(CC) $(CFLAGS) -c $< -o $@
+
 
 clean:
-	rm -f $(OBJS) $(TARGET)
-
-.PHONY: all clean
+	rm -f $(OBJ) $(TARGET)
