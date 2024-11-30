@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 
     if (argc < 4)
     {
-        printf("Any words are not written.\n");
+        printf("Any words are not  written.\n");
         return 1;
     }
 
