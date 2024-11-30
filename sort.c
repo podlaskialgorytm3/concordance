@@ -56,22 +56,21 @@ void bubbleSortByWord(concordancePointer head)
 
     int swapped;
     concordancePointer ptr;
-    concordancePointer lptr = NULL; // Ostatni posortowany element
+    concordancePointer lptr = NULL;
 
     do
     {
         swapped = 0;
         ptr = head;
-
         while (ptr->next != lptr)
         {
             if (strcmp(ptr->word, ptr->next->word) > 0)
-            { // Porównanie alfabetyczne
+            {
                 swapNodes(ptr, ptr->next);
                 swapped = 1;
             }
             ptr = ptr->next;
         }
-        lptr = ptr; // Zmniejszamy zakres sortowania
+        lptr = ptr;
     } while (swapped);
 }
