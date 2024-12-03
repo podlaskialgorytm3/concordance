@@ -18,7 +18,7 @@ int main(int argc, char **argv)
         *(words + i) = argv[i + 3];
     }
 
-    if (fileName == "")
+    if (argc < 2)
     {
         printf("File name is not written.\n");
         return 1;
