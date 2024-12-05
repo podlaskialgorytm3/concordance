@@ -8,25 +8,14 @@
 
 int main(int argc, char **argv)
 {
-    char *fileName = argc > 1 ? argv[1] : "";
-    int sortMode = argc > 2 ? atoi(argv[2]) : -1;
-    int n = argc - 3;
-    char **words = malloc(n * sizeof(char *));
-
-    for (int i = 0; i < n; i++)
-    {
-        *(words + i) = argv[i + 3];
-    }
-
     if (argc < 2)
     {
         printf("File name is not written.\n");
         return 1;
     }
-
-    if (!(sortMode == 1 || sortMode == 0))
+    if (argc < 3)
     {
-        printf("Sort mode is not entered.\n");
+        printf("Sort mode is not written.\n");
         return 1;
     }
 
@@ -34,6 +23,22 @@ int main(int argc, char **argv)
     {
         printf("Any words are not  written.\n");
         return 1;
+    }
+
+    char *fileName = argv[1];
+    int sortMode = atoi(argv[2]);
+    int n = argc - 3;
+    char **words = malloc(n * sizeof(char *));
+
+    if (!(sortMode == 1 || sortMode == 0))
+    {
+        printf("Sort mode is not correct.\n");
+        return 1;
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        *(words + i) = argv[i + 3];
     }
 
     concordancePointer wordList = NULL;
